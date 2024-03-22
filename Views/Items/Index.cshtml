@@ -1,0 +1,112 @@
+﻿@model IEnumerable<JewelleryStore.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    /* Custom styles */
+    .btn-custom {
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+        }
+
+    .btn-edit {
+        background-color: #ff69b4; /* Hot pink */
+        color: #fff;
+    }
+
+    .btn-details {
+        background-color: #ba55d3; /* Medium purple */
+        color: #fff;
+    }
+
+    .btn-delete {
+        background-color: #ff1493; /* Deep pink */
+        color: #fff;
+    }
+
+    .btn-custom:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Center the heading */
+    .heading-center {
+        text-align: center;
+    }
+
+    /* Align text inside table cells */
+    .table td,
+    .table th {
+        vertical-align: middle;
+        text-align: center;
+        font-weight: bold; /* Make text bold */
+    }
+
+    /* Fancy column headings */
+    .fancy-heading {
+        background: linear-gradient(to right, #ff69b4, #ba55d3); /* Gradient background with pink and purple */
+        border-bottom: 2px solid #dee2e6;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow */
+        text-transform: uppercase;
+    }
+
+    /* Fancy main heading */
+    .main-heading {
+        font-family: 'Pacifico', cursive; /* Custom font */
+        font-size: 4em; /* Increase font size */
+        color: #ff69b4; /* Hot pink */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* More prominent text shadow */
+        text-align: center;
+    }
+</style>
+
+<div class="container mt-5 mb-5">
+    <h1 class="main-heading mb-4">Welcome to our Jewellery Store</h1>
+
+    <div class="row justify-content-end mb-3">
+        <div class="col-auto">
+            <a asp-action="Create" class="btn btn-primary btn-custom">Add New Item</a>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-light">
+                <tr class="fancy-heading">
+                    <th scope="col">Item Name <i class="fas fa-gem"></i></th> <!-- Add icon to the heading -->
+                    <th scope="col">Color <i class="fas fa-palette"></i></th> <!-- Add icon to the heading -->
+                    <th scope="col">Gemstone Type <i class="fas fa-gem"></i></th> <!-- Add icon to the heading -->
+                    <th scope="col">Quantity <i class="fas fa-cubes"></i></th> <!-- Add icon to the heading -->
+                    <th scope="col">Price <i class="fas fa-dollar-sign"></i></th> <!-- Add icon to the heading -->
+                    <th scope="col">Actions <i class="fas fa-cogs"></i></th> <!-- Add icon to the heading -->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Color)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GemstoneType)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-custom btn-edit">Edit</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-custom btn-details">Details</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-custom btn-delete">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

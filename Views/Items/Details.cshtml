@@ -1,0 +1,92 @@
+﻿@model JewelleryStore.Models.Item
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    /* Custom styles */
+    .card {
+        background-color: #f8f9fa; /* Light gray background */
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+
+    .card-title {
+        color: #ff69b4; /* Hot pink color */
+        font-weight: bold;
+    }
+
+    .btn {
+        border-radius: 20px; /* Rounded corners for buttons */
+    }
+
+    /* Edit button styling */
+    .btn-primary {
+        background-color: #ff69b4; /* Hot pink color */
+        border-color: #ff69b4; /* Hot pink border color */
+        margin-right: 10px; /* Add margin between buttons */
+    }
+
+        .btn-primary:hover {
+            background-color: #ff1493; /* Darker pink color on hover */
+            border-color: #ff1493; /* Darker pink border color on hover */
+        }
+
+    /* Back to list button styling */
+    .btn-secondary {
+        background-color: #ba55d3; /* Purple color */
+        border-color: #ba55d3; /* Purple border color */
+    }
+
+        .btn-secondary:hover {
+            background-color: #800080; /* Dark purple color on hover */
+            border-color: #800080; /* Dark purple border color on hover */
+        }
+
+    /* Details styling */
+    .details dt {
+        font-weight: bold;
+        color: #ff69b4; /* Hot pink color */
+    }
+
+    .details dd {
+        color: #ba55d3; /* Purple color */
+    }
+</style>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Details</h4> <!-- Moved "Details" heading here -->
+                    <hr />
+                    <dl class="details">
+                        <dt>Item Name</dt>
+                        <dd>@Html.DisplayFor(model => model.ItemName)</dd>
+                        <dt>Color</dt>
+                        <dd>@Html.DisplayFor(model => model.Color)</dd>
+                        <dt>Gemstone Type</dt>
+                        <dd>@Html.DisplayFor(model => model.GemstoneType)</dd>
+                        <dt>Quantity</dt>
+                        <dd>@Html.DisplayFor(model => model.Quantity)</dd>
+                        <dt>Price</dt>
+                        <dd>@Html.DisplayFor(model => model.Price)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="d-flex justify-content-end">
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary mr-2">Edit</a>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

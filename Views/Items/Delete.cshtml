@@ -1,0 +1,102 @@
+﻿@model JewelleryStore.Models.Item
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    /* Custom styles */
+    h1, h3 {
+        color: #ff69b4; /* Hot pink color */
+    }
+
+    .btn {
+        border-radius: 20px; /* Rounded corners for buttons */
+        transition: background-color 0.3s, border-color 0.3s; /* Smooth transition effect */
+    }
+
+    /* Delete button styling */
+    .btn-danger {
+        background-color: #ff69b4; /* Hot pink color */
+        border-color: #ff69b4; /* Hot pink border color */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        transition: transform 0.3s; /* Smooth transition effect */
+    }
+
+        .btn-danger:hover {
+            background-color: #ff1493; /* Darker pink color on hover */
+            border-color: #ff1493; /* Darker pink border color on hover */
+            transform: translateY(-2px); /* Move button up slightly on hover */
+        }
+
+    /* Back to list button styling */
+    .btn-secondary {
+        background-color: #ba55d3; /* Purple color */
+        border-color: #ba55d3; /* Purple border color */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        transition: transform 0.3s; /* Smooth transition effect */
+    }
+
+        .btn-secondary:hover {
+            background-color: #800080; /* Dark purple color on hover */
+            border-color: #800080; /* Dark purple border color on hover */
+            transform: translateY(-2px); /* Move button up slightly on hover */
+        }
+
+    /* Card styling */
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        transition: box-shadow 0.3s, transform 0.3s; /* Smooth transition effect */
+    }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Bigger shadow on hover */
+            transform: rotate(1deg); /* Rotate card slightly on hover */
+        }
+</style>
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Item Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GemstoneType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GemstoneType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" class="mt-4">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger mr-2">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>

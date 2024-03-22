@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    /* Custom styles */
+    .btn-custom {
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+        }
+
+    .btn-edit {
+        background-color: #ff69b4; /* Hot pink */
+        color: #fff;
+    }
+
+    .btn-details {
+        background-color: #ba55d3; /* Medium purple */
+        color: #fff;
+    }
+
+    .btn-delete {
+        background-color: #ff1493; /* Deep pink */
+        color: #fff;
+    }
+
+    .btn-custom:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Center the heading */
+    .heading-center {
+        text-align: center;
+    }
+
+    /* Fancy column headings */
+    .fancy-heading {
+        background: linear-gradient(to right, #ff69b4, #ba55d3); /* Gradient background with pink and purple */
+        border-bottom: 2px solid #dee2e6;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow */
+        text-transform: uppercase;
+    }
+
+    /* Fancy main heading */
+    .main-heading {
+        font-family: 'Pacifico', cursive; /* Custom font */
+        font-size: 4em; /* Increase font size */
+        color: #ff69b4; /* Hot pink */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* More prominent text shadow */
+        text-align: center;
+    }
+
+    /* Background styling */
+    .bg-gradient {
+        background: linear-gradient(to right, #ff69b4, #ba55d3); /* Gradient background with pink and purple */
+    }
+</style>
+
+<div class="container-fluid mt-5 mb-5 bg-gradient">
+    <div class="row">
+        <div class="col">
+            <h1 class="main-heading mb-4">Welcome to our <span style="color: #ba55d3;">Jewellery Store</span></h1>
+            <div class="text-center">
+                <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
